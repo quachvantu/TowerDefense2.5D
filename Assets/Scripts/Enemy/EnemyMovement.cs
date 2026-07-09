@@ -5,7 +5,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private PathNode currentNode;
     private PathNode targetNode;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 0.5f;
     private void Update()
     {
         Move();
