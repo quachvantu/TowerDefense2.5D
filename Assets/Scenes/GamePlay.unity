@@ -15895,9 +15895,9 @@ MonoBehaviour:
   enemySpawner: {fileID: 1917443110}
   waves:
   - enemyCount: 10
-    delayAfterWave: 10
+    delayBeforeNextWave: 10
   - enemyCount: 15
-    delayAfterWave: 10
+    delayBeforeNextWave: 10
 --- !u!1001 &1890762030
 PrefabInstance:
   m_ObjectHideFlags: 0
