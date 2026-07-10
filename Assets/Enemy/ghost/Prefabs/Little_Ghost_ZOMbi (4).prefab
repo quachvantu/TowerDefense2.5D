@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 8747757470087523454}
   - component: {fileID: -8898594935766825114}
   - component: {fileID: 4708014832388163822}
+  - component: {fileID: 4212325343905865273}
   m_Layer: 0
   m_Name: Little_Ghost_ZOMbi (4)
   m_TagString: Untagged
@@ -296,6 +297,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 100
+--- !u!114 &4212325343905865273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8747757470087523455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b4488d115d4204ab4892df7c0b7628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
 --- !u!1 &8747757470159160704
 GameObject:
   m_ObjectHideFlags: 0
