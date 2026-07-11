@@ -16,6 +16,8 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
+            OnEnemyDied?.Invoke(this);
+            Debug.Log("Enemy died");
             Die();
         }
     }

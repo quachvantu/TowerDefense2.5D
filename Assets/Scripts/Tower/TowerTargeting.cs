@@ -61,4 +61,8 @@ public class TowerTargeting : MonoBehaviour
             }
         }
     }
+    public Enemy GetCurrentTarget()
+    {
+        return currentTarget;
+    }
 }

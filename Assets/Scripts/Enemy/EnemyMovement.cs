@@ -14,7 +14,6 @@ public class EnemyMovement : MonoBehaviour
     {
         if (targetNode == null)
         {
-            Debug.Log("Enemy reached End");
             return;
         }
         transform.position = Vector3.MoveTowards(transform.position, targetNode.transform.position, speed * Time.deltaTime);
