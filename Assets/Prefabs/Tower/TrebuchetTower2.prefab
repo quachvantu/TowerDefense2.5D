@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7945637649368209737}
   - component: {fileID: 4740557920380551069}
   - component: {fileID: -8183417413777701582}
+  - component: {fileID: 239991177208794437}
   m_Layer: 0
   m_Name: TrebuchetTower2
   m_TagString: Untagged
@@ -83,6 +84,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &239991177208794437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6758811355817031481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634e89636e17a6d4695c7539f03cac46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
+  rotationTransform: {fileID: 6816095452937933370}
 --- !u!1001 &3209690675881115877
 PrefabInstance:
   m_ObjectHideFlags: 0

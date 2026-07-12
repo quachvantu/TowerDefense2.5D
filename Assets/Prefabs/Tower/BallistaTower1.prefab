@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -8373633906945984132}
   - component: {fileID: -1248575398126265963}
   - component: {fileID: -2458385867815395687}
+  - component: {fileID: 5869926502794466021}
   m_Layer: 0
   m_Name: BallistaTower1
   m_TagString: Untagged
@@ -84,6 +85,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5869926502794466021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6811173593365105607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634e89636e17a6d4695c7539f03cac46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
+  rotationTransform: {fileID: 725339047222124532}
 --- !u!1001 &980189843962755103
 PrefabInstance:
   m_ObjectHideFlags: 0
