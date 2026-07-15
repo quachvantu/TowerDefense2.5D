@@ -147,5 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03adcc1651c456b41b6fa729eca4abee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArcBullet
-  arcHeight: 0.7
+  arcHeight: 0.4
   bulletSpeed: 4

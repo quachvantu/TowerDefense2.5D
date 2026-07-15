@@ -19,11 +19,11 @@ public class ArcBullet : Bullet
     }
     private void Update()
     {
-        if (currentTarget == null)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        // if (currentTarget == null)
+        // {
+        //     Destroy(gameObject);
+        //     return;
+        // }
         progress += (bulletSpeed / totalDistance) * Time.deltaTime;
         progress = Mathf.Clamp01(progress);
         float height = Mathf.Sin(progress * Mathf.PI) * arcHeight;
