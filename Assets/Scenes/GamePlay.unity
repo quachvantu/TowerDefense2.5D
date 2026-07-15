@@ -7098,6 +7098,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4001163946693984848, guid: 001699d944219f740a22c371b4b12d15, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6811173593365105607, guid: 001699d944219f740a22c371b4b12d15, type: 3}
       propertyPath: m_Name
       value: BallistaTower1
@@ -17278,6 +17282,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4963506131313488512, guid: 1e3465ac4fc687949a0a6daa1e8feea5, type: 3}
+      propertyPath: m_Radius
+      value: 3.49
+      objectReference: {fileID: 0}
     - target: {fileID: 2624045022001500632, guid: 1e3465ac4fc687949a0a6daa1e8feea5, type: 3}
       propertyPath: m_Name
       value: MortarTower1

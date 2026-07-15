@@ -18,6 +18,7 @@ public class TowerRotation : MonoBehaviour
         Vector3 positionWeapon = rotationTransform.position;
         Vector3 positionEnemy = target.transform.position;
         Vector3 direction = (positionEnemy - positionWeapon);
+        direction.y = 0f;
         Quaternion quaternion = Quaternion.LookRotation(direction);
         float rotationSpeed = 10f;
         rotationTransform.rotation = Quaternion.Lerp(rotationTransform.rotation, quaternion, Time.deltaTime * rotationSpeed);

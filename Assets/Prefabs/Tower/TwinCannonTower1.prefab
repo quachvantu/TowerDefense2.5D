@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2551341407861213588}
   - component: {fileID: 4919046622190492740}
   - component: {fileID: -8049887724329992834}
-  - component: {fileID: 2271118707091881383}
   - component: {fileID: 8729150156163201090}
+  - component: {fileID: 3885642034988230715}
   m_Layer: 0
   m_Name: TwinCannonTower1
   m_TagString: Untagged
@@ -51,7 +51,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerAttack
   damage: 10
-  attackCooldown: 0.5
+  attackCooldown: 0.3
+  bulletPrefab: {fileID: 1845512424001681614, guid: 443762525003bab4e9512f028f882ec9, type: 3}
+  firePoint:
+  - {fileID: 953489581411523291}
+  - {fileID: 5122904389897958829}
 --- !u!114 &-8049887724329992834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +68,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c92ba470760e2c41840f62a6103e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerTargeting
---- !u!135 &2271118707091881383
+--- !u!114 &8729150156163201090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542017022654110113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634e89636e17a6d4695c7539f03cac46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
+  rotationTransform: {fileID: 6719438541855957245}
+--- !u!135 &3885642034988230715
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,21 +100,70 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8729150156163201090
-MonoBehaviour:
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 1.11, z: 0}
+--- !u!1 &3034496006091804933
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542017022654110113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 634e89636e17a6d4695c7539f03cac46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
-  rotationTransform: {fileID: 6719438541855957245}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953489581411523291}
+  m_Layer: 0
+  m_Name: FirePoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &953489581411523291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034496006091804933}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.049999952, y: 0.5999999, z: 0.3000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6719438541855957245}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6990233832055244740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5122904389897958829}
+  m_Layer: 0
+  m_Name: FirePoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5122904389897958829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990233832055244740}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.049999952, y: 0.5999999, z: 0.3000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6719438541855957245}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5435669495346626455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -214,7 +280,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73774e6e275ae4242aa012461b7a9b60, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 953489581411523291}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73774e6e275ae4242aa012461b7a9b60, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5122904389897958829}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73774e6e275ae4242aa012461b7a9b60, type: 3}
 --- !u!4 &6719438541855957245 stripped

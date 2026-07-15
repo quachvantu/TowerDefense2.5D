@@ -5,6 +5,8 @@ public class TowerAttack : MonoBehaviour
     private TowerTargeting towerTargeting;
     [SerializeField] private int damage;
     [SerializeField] private float attackCooldown;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform[] firePoint;
     private float attackTimer = 0f;
     private void Awake()
     {
@@ -19,14 +21,17 @@ public class TowerAttack : MonoBehaviour
         attackTimer += Time.deltaTime;
         if (attackTimer >= attackCooldown)
         {
-            Attack();
+            SpawnBullet();
             attackTimer = 0f;
         }
     }
-    private void Attack()
+    private void SpawnBullet()
     {
-        Enemy target = towerTargeting.GetCurrentTarget();
-        target.Health.TakeDamage(damage);
-        Debug.Log(target.name);
+        foreach (Transform point in firePoint)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, point.position, point.rotation);
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+            bulletScript.SetTarget(towerTargeting.GetCurrentTarget(), damage);
+        }
     }
 }

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &403932357551643065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877182258164734546}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1877182258164734546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403932357551643065}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3760001, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8201218426088440543}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2882036909346282680
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,8 +42,8 @@ GameObject:
   - component: {fileID: 3060699048586174296}
   - component: {fileID: -5031401368295305242}
   - component: {fileID: -4707909696885582066}
-  - component: {fileID: 613414586880962060}
   - component: {fileID: -7229681710142030221}
+  - component: {fileID: -8167729133905655163}
   m_Layer: 0
   m_Name: MortarTower2
   m_TagString: Untagged
@@ -49,8 +80,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b105231d0feb9b142ac22a557fe3071c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerAttack
-  damage: 50
-  attackCooldown: 2
+  damage: 40
+  attackCooldown: 1.5
+  bulletPrefab: {fileID: 3821055061257714752, guid: 09fdba73b7cd3884080c617ae8321640, type: 3}
+  firePoint:
+  - {fileID: 1877182258164734546}
 --- !u!114 &-4707909696885582066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +97,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c92ba470760e2c41840f62a6103e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerTargeting
---- !u!135 &613414586880962060
+--- !u!114 &-7229681710142030221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882036909346282680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634e89636e17a6d4695c7539f03cac46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
+  rotationTransform: {fileID: 8201218426088440543}
+--- !u!135 &-8167729133905655163
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,21 +129,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7229681710142030221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2882036909346282680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 634e89636e17a6d4695c7539f03cac46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
-  rotationTransform: {fileID: 8201218426088440543}
+  m_Radius: 3.5
+  m_Center: {x: 0, y: 1.18, z: 0}
 --- !u!1001 &4127507761535881138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -213,7 +247,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: df8a00ec28ab2a04bac9b3f3cee3c757, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1877182258164734546}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df8a00ec28ab2a04bac9b3f3cee3c757, type: 3}
 --- !u!4 &8201218426088440543 stripped

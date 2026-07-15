@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &339934199872538438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7953919144802628130}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7953919144802628130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339934199872538438}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5769999, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 725339047222124532}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6811173593365105607
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,8 +42,8 @@ GameObject:
   - component: {fileID: 693504127872918}
   - component: {fileID: -8373633906945984132}
   - component: {fileID: -1248575398126265963}
-  - component: {fileID: -2458385867815395687}
   - component: {fileID: 5869926502794466021}
+  - component: {fileID: 4001163946693984848}
   m_Layer: 0
   m_Name: BallistaTower1
   m_TagString: Untagged
@@ -51,7 +82,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerAttack
   damage: 10
-  attackCooldown: 1
+  attackCooldown: 0.7
+  bulletPrefab: {fileID: 7796733767726268347, guid: aaaf41208b41d614db74cbca05284381, type: 3}
+  firePoint:
+  - {fileID: 7953919144802628130}
 --- !u!114 &-1248575398126265963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +98,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c92ba470760e2c41840f62a6103e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerTargeting
---- !u!135 &-2458385867815395687
+--- !u!114 &5869926502794466021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6811173593365105607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634e89636e17a6d4695c7539f03cac46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
+  rotationTransform: {fileID: 725339047222124532}
+--- !u!135 &4001163946693984848
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,21 +130,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5869926502794466021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6811173593365105607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 634e89636e17a6d4695c7539f03cac46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
-  rotationTransform: {fileID: 725339047222124532}
+  m_Radius: 5
+  m_Center: {x: 0, y: 2.63, z: 0}
 --- !u!1001 &980189843962755103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -152,7 +186,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8a924aa6e9130b143b05357d91838be2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7953919144802628130}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a924aa6e9130b143b05357d91838be2, type: 3}
 --- !u!4 &725339047222124532 stripped
