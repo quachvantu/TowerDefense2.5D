@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
   rotationTransform: {fileID: 5202759476382906579}
+  rotateVertically: 1
 --- !u!135 &-6729500574958039627
 SphereCollider:
   m_ObjectHideFlags: 0

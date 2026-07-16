@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArcBullet
   arcHeight: 0.4
-  bulletSpeed: 4
+  bulletSpeed: 5
