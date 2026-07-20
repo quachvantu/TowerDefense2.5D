@@ -5,22 +5,25 @@ using UnityEngine.InputSystem;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
-    private int currentHealth;
+    public int MaxHealth => maxHealth;
+    public event Action OnHealthChanged;
+    public int CurrentHealth { get; private set; }
     public event Action<EnemyHealth> OnEnemyDied;
-    private void Start()
+    private void Awake()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
     }
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
+        CurrentHealth -= damage;
+        CurrentHealth = Mathf.Max(0, CurrentHealth - damage);
+        OnHealthChanged?.Invoke();
+        if (CurrentHealth <= 0)
         {
             OnEnemyDied?.Invoke(this);
             Die();
         }
     }
-
     private void Die()
     {
         Destroy(gameObject);
