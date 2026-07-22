@@ -1,11 +1,18 @@
+using System;
 using System.IO;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public static event Action<int> OnEnemyReachedEnd;
+    private Enemy enemy;
     private PathNode currentNode;
     private PathNode targetNode;
     [SerializeField] private float speed = 0.5f;
+    private void Awake()
+    {
+        enemy = GetComponent<Enemy>();
+    }
     private void Update()
     {
         Move();
@@ -14,6 +21,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (targetNode == null)
         {
+            OnEnemyReachedEnd?.Invoke(enemy.BaseDamage);
+            Destroy(gameObject);
             return;
         }
         transform.position = Vector3.MoveTowards(transform.position, targetNode.transform.position, speed * Time.deltaTime);

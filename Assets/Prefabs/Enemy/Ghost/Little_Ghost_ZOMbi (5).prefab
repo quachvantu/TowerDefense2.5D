@@ -469,6 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b4488d115d4204ab4892df7c0b7628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  baseDamage: 1
 --- !u!1001 &9137888642141489280
 PrefabInstance:
   m_ObjectHideFlags: 0
