@@ -6,11 +6,6 @@ public class TowerTargeting : MonoBehaviour
 {
     private List<Enemy> enemiesInRange = new();
     private Enemy currentTarget;
-    private void TowerTargeting_OnEnemyDied(EnemyHealth health)
-    {
-        Enemy enemy = health.GetComponent<Enemy>();
-        RemoveEnemy(enemy);
-    }
     private void OnTriggerEnter(Collider other)
     {
         Enemy enemy = other.GetComponent<Enemy>();
@@ -19,6 +14,10 @@ public class TowerTargeting : MonoBehaviour
             enemy.Health.OnEnemyDied += TowerTargeting_OnEnemyDied;
             AddEnemy(enemy);
         }
+    }
+    private void TowerTargeting_OnEnemyDied(Enemy enemy)
+    {
+        RemoveEnemy(enemy);
     }
     private void OnTriggerExit(Collider other)
     {

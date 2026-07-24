@@ -3542,6 +3542,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1884073118}
+  - {fileID: 1762191645}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &445548032
@@ -13900,6 +13901,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f90504b2dda026c41bea36ad80525657, type: 3}
+--- !u!1 &1762191644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1762191645}
+  - component: {fileID: 1762191646}
+  m_Layer: 0
+  m_Name: GoldManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1762191645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762191644}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 435363118}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1762191646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762191644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b0279476629e34fba3cd3067b90218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoldManager
 --- !u!1001 &1763310076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15799,18 +15844,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefabs:
-  - {fileID: -8125821634039171107, guid: 68a45b7c7de96f84bb3192731ba3a68c, type: 3}
-  - {fileID: -38331632594684907, guid: b100033bd257c8e479a5c0a5b148fa2c, type: 3}
-  - {fileID: 5526376898387228575, guid: d0689260bad5ace43851bc4ad441f23d, type: 3}
-  - {fileID: -8898594935766825114, guid: 98a93bca5029d9f4b87c420c0e2ee583, type: 3}
-  - {fileID: -8694450166583567118, guid: e5ee9efbfc920f245962816752e72e91, type: 3}
-  - {fileID: -4598621765117247306, guid: 766762930a40b174c8956cdf3007423e, type: 3}
-  - {fileID: -7986833006096641689, guid: 04b2d16e1c1a3ff44b840552be5592c0, type: 3}
-  - {fileID: 1600435358176284699, guid: ef18b671ee08e3f48bb32dae8e32e51f, type: 3}
-  - {fileID: 4387971447513328485, guid: 0e984e923d84c6644a3633bbbc1127b9, type: 3}
-  - {fileID: -7847764259239996062, guid: 82e92d24e92763d46892c18d9721ad78, type: 3}
+  - {fileID: -1312373198526620950, guid: 68a45b7c7de96f84bb3192731ba3a68c, type: 3}
+  - {fileID: -8360453414584876076, guid: b100033bd257c8e479a5c0a5b148fa2c, type: 3}
+  - {fileID: 5805949751152880774, guid: d0689260bad5ace43851bc4ad441f23d, type: 3}
+  - {fileID: 4212325343905865273, guid: 98a93bca5029d9f4b87c420c0e2ee583, type: 3}
+  - {fileID: 7101572600107644741, guid: e5ee9efbfc920f245962816752e72e91, type: 3}
+  - {fileID: 404832444078247683, guid: 766762930a40b174c8956cdf3007423e, type: 3}
+  - {fileID: -7214825607181011975, guid: 04b2d16e1c1a3ff44b840552be5592c0, type: 3}
+  - {fileID: 3885080430686703829, guid: ef18b671ee08e3f48bb32dae8e32e51f, type: 3}
+  - {fileID: 8429232865981701028, guid: 0e984e923d84c6644a3633bbbc1127b9, type: 3}
+  - {fileID: 3693535944868450402, guid: 82e92d24e92763d46892c18d9721ad78, type: 3}
   spawnPoint: {fileID: 1022814385}
   spawnInterval: 0.5
+  goldManager: {fileID: 1762191646}
 --- !u!1001 &1917846482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17796,11 +17842,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 330585546}
-  - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1829834099}
   - {fileID: 872113355}
   - {fileID: 861909794}
+  - {fileID: 1389638323}
+  - {fileID: 410087041}
   - {fileID: 435363118}
   - {fileID: 263966882}
   - {fileID: 401125298}
@@ -17957,5 +18004,4 @@ SceneRoots:
   - {fileID: 542196190}
   - {fileID: 1421870970}
   - {fileID: 195815101}
-  - {fileID: 1389638323}
   - {fileID: 599247738}

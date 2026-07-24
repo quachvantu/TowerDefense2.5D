@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   baseDamage: 5
+  goldReward: 15
 --- !u!1001 &8187153867183983303
 PrefabInstance:
   m_ObjectHideFlags: 0

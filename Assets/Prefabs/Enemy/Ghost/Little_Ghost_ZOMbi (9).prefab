@@ -588,6 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   baseDamage: 1
+  goldReward: 5
 --- !u!1 &4528888763608222259
 GameObject:
   m_ObjectHideFlags: 0

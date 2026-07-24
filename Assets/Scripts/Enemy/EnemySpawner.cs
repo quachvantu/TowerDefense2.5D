@@ -4,14 +4,22 @@ using System.Collections;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private List<EnemyMovement> enemyPrefabs;
+    [SerializeField] private List<Enemy> enemyPrefabs;
     [SerializeField] private PathNode spawnPoint;
     [SerializeField] private float spawnInterval;
+    [SerializeField] private GoldManager goldManager;
     private void SpawnEnemy()
     {
-        EnemyMovement enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], spawnPoint.transform.position, Quaternion.identity);
-        enemy.InitializePath(spawnPoint);
+        Enemy enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], spawnPoint.transform.position, Quaternion.identity);
+        enemy.Movement.InitializePath(spawnPoint);
+        enemy.Health.OnEnemyDied += HandleEnemyDied;
     }
+
+    private void HandleEnemyDied(Enemy enemy)
+    {
+        goldManager.AddGold(enemy.GoldReward);
+    }
+
     private IEnumerator SpawnRoutine(int enemyCount)
     {
         for (int i = 0; i < enemyCount; i++)

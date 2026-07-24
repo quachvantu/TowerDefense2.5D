@@ -8,10 +8,12 @@ public class EnemyHealth : MonoBehaviour
     public int MaxHealth => maxHealth;
     public event Action OnHealthChanged;
     public int CurrentHealth { get; private set; }
-    public event Action<EnemyHealth> OnEnemyDied;
+    public event Action<Enemy> OnEnemyDied;
+    private Enemy enemy;
     private void Awake()
     {
         CurrentHealth = maxHealth;
+        enemy = GetComponent<Enemy>();
     }
     public void TakeDamage(int damage)
     {
@@ -20,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
         OnHealthChanged?.Invoke();
         if (CurrentHealth <= 0)
         {
-            OnEnemyDied?.Invoke(this);
+            OnEnemyDied?.Invoke(enemy);
             Die();
         }
     }
